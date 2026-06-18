@@ -1,81 +1,101 @@
-🥔 Potato Disease Prediction
-Overview
+# 🥔 Potato Disease Prediction
+
+## Overview
 
 This project uses Deep Learning and Computer Vision techniques to classify potato leaf images into different disease categories. A Convolutional Neural Network (CNN) was trained on the PlantVillage dataset to automatically identify potato leaf diseases and support early disease detection.
 
-Features
-Potato leaf disease classification using CNN
-Image preprocessing and normalization
-Data augmentation for improved generalization
-Multi-class image classification
-Deep learning model built using TensorFlow/Keras
-Disease prediction from leaf images
-Dataset
+## Features
+
+* Potato leaf disease classification using CNN
+* Image preprocessing and normalization
+* Data augmentation for improved generalization
+* Multi-class image classification
+* Deep learning model built using TensorFlow/Keras
+* Disease prediction from leaf images
+
+## Dataset
 
 The project uses the PlantVillage dataset containing potato leaf images categorized into:
 
-Potato Early Blight
-Potato Late Blight
-Potato Healthy
+* Potato Early Blight
+* Potato Late Blight
+* Potato Healthy
 
 Dataset Structure:
 
+```text
 PlantVillage/
 ├── Potato___Early_blight
 ├── Potato___Late_blight
 └── Potato___healthy
-Technologies Used
-Python
-TensorFlow
-Keras
-NumPy
-Matplotlib
-Google Colab
-Project Workflow
-1. Data Preparation
-Loaded images from the PlantVillage dataset
-Created TensorFlow image datasets
-Applied batching and shuffling
-Split data into training, validation, and testing sets
-2. Image Preprocessing
+```
+
+## Technologies Used
+
+* Python
+* TensorFlow
+* Keras
+* NumPy
+* Matplotlib
+* Google Colab
+
+## Project Workflow
+
+### 1. Data Preparation
+
+* Loaded images from the PlantVillage dataset
+* Created TensorFlow image datasets
+* Applied batching and shuffling
+* Split data into training, validation, and testing sets
+
+### 2. Image Preprocessing
 
 Performed:
 
-Image resizing
-Pixel normalization
-Data augmentation
+* Image resizing
+* Pixel normalization
+* Data augmentation
+
+```python
 resize_and_rescale = tf.keras.Sequential([
     layers.Resizing(256, 256),
     layers.Rescaling(1./255)
 ])
-3. Data Augmentation
+```
+
+### 3. Data Augmentation
 
 Used augmentation techniques to improve model robustness:
 
-Random Flip
-Random Rotation
-4. Model Architecture
+* Random Flip
+* Random Rotation
+
+### 4. Model Architecture
 
 Built a Convolutional Neural Network (CNN) consisting of:
 
-Multiple Conv2D Layers
-MaxPooling Layers
-Flatten Layer
-Dense Layers
-Softmax Output Layer
-5. Model Training
+* Multiple Conv2D Layers
+* MaxPooling Layers
+* Flatten Layer
+* Dense Layers
+* Softmax Output Layer
+
+### 5. Model Training
 
 The model was trained using TensorFlow/Keras to classify potato leaf images into three disease categories.
 
-6. Model Evaluation
+### 6. Model Evaluation
 
 Evaluated performance using:
 
-Training Accuracy
-Validation Accuracy
-Training Loss
-Validation Loss
-Model Architecture
+* Training Accuracy
+* Validation Accuracy
+* Training Loss
+* Validation Loss
+
+## Model Architecture
+
+```text
 Input Image
       ↓
 Resizing & Rescaling
@@ -91,23 +111,34 @@ Flatten
 Dense Layer
       ↓
 Softmax Output
-Example Prediction
+```
+
+## Example Prediction
 
 Input:
 
+```text
 Potato Leaf Image
+```
 
 Output:
 
+```text
 Potato___Early_blight
+```
 
 or
 
+```text
 Potato___Late_blight
+```
 
 or
 
+```text
 Potato___healthy
+```
+
 ## How to Run
 
 ### 1. Clone the Repository
@@ -178,5 +209,4 @@ potato-disease-classification/
 ├── README.md
 └── saved_models/
 ```
-
 ### END
